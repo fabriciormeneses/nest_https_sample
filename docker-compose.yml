@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: api
+    build:
+      dockerfile: ./dockerfile
+      context: .
+    image: nestjs
+    environment:
+      NODE_ENV: development
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./api-poc/src:/var/www/src
